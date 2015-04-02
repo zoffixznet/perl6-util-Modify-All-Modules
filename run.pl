@@ -20,7 +20,10 @@ my @wanted = map +{
     repo => $modules->{$_}{url},
 }, grep $modules->{$_}{badge_panda_nos11}, keys %$modules;
 
+my $counter = 0;
 for ( sort { $a->{name} cmp $b->{name} } @wanted ) {
+    say "\n\nCOUNTER: " . $counter++;
+
     if ( $START_AT ) {
         $_->{name} eq $START_AT or next;
         undef $START_AT;
