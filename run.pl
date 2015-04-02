@@ -65,7 +65,7 @@ for ( sort { $a->{name} cmp $b->{name} } @wanted ) {
         else {
             my $name = $_->{name};
             for ( @files ) {
-                my $lib = s{^lib/|\.(pm|p6|pm6)}{}gr;
+                my $lib = s{^lib/|\.(p6|pm6|pm)}{}gr;
                 $lib =~ s{/}{::}g;
                 say qq#        "$lib": "$_",#;
             }
